@@ -11,7 +11,7 @@ import "./App.css";
 
 // Import from react-router-dom
 import {
-    BrowserRouter as Router, Routes,
+    BrowserRouter as Router, Switch,
     Route, Link
 } from "react-router-dom";
 
@@ -34,7 +34,7 @@ const App = () => {
                             <Navbar.Brand>
                                 <Link to={"/create-client"}
                                     className="nav-link">
-                                    React MERN Stack App
+                                    New Client
                                 </Link>
                             </Navbar.Brand>
 
@@ -61,19 +61,12 @@ const App = () => {
                     <Row>
                         <Col md={12}>
                             <div className="wrapper">
-                                <Router>
-                                <Routes>
-                                    <Route exact path="/"
-                                        component={CreateClient} />
-                                    <Route path="/create-client"
-                                        component={CreateClient} />
-                                    <Route path="/edit-client/:id"
-                                        component={EditClient} />
-                                    <Route path="/client-list"
-                                        component={ClientList} />
-                                </Routes>
-                                </Router>
-                                
+                                <Switch>
+                                    <Route exact path="/" component={CreateClient} />
+                                    <Route path="/create-client" component={CreateClient} />
+                                    <Route path="/edit-client/:id" component={EditClient} />
+                                    <Route path="/client-list" component={ClientList} />
+                                </Switch>
                             </div>
                         </Col>
                     </Row>

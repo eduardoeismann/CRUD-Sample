@@ -8,9 +8,9 @@ import ClientForm from "./ClientForm";
 const CreateClient = () => {
     const [formValues, setFormValues] =
         useState({
-            name: '',
-            email: '',
-            rollno: ''
+            name: 'nome',
+            email: 'e-mail',
+            rollno: '0'
         });
     // onSubmit handler
     const onSubmit = clientObject => {
